@@ -1,4 +1,6 @@
 import { findingHelp } from './help.js';
+import { analyze, compare } from './analyzer.js';
+import { cases } from './cases.js';
 const element = id => document.getElementById(id);
 let activeCase;
 let latest;
@@ -7,10 +9,11 @@ let analyzedText = '';
 let severity = 'all';
 const escape = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 async function api(path, body) {
-  const response = await fetch(path, body ? { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) } : {});
-  const data = await response.json();
-  if (!response.ok) throw new Error(data.error || 'No se pudo completar la solicitud.');
-  return data;
+  if (body && new TextEncoder().encode(JSON.stringify(body)).length > 1024 * 1024) throw new Error('Máximo 1 MB por análisis o comparación.');
+  if (path === '/api/cases') return cases;
+  if (path === '/api/analyze') return analyze(body.config, body.query);
+  if (path === '/api/compare') return compare(body.before, body.after);
+  throw new Error('Operación local desconocida.');
 }
 function showError(error) { element('error').textContent = error.message; element('error').hidden = false; }
 async function investigate() {

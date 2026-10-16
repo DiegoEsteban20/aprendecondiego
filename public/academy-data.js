@@ -199,7 +199,7 @@ export const lessons = [
     ],
     example: 'Guardar el hash de un reporte ayuda a identificar si cambió. Para demostrar su procedencia necesitas además un mecanismo de confianza, por ejemplo una firma verificable.',
     practice: 'Distingue qué protege un certificado TLS y qué no protege si el servidor o el usuario ya están comprometidos.',
-    connection: 'El servidor del laboratorio usa HTTP en loopback y no debe publicarse como plataforma remota. No inspecciona TLS ni gestiona certificados.'
+    connection: 'La web estática procesa en el navegador y el alojamiento proporciona HTTPS. La API Node.js opcional usa loopback y no debe exponerse como plataforma remota. No se inspecciona TLS ni se gestionan certificados de equipos.'
   },
   {
     id: 'fortinet', category: 'Fabricantes', title: 'Fortinet: políticas y ecosistema', pages: '33–38', level: 'Intermedio',
