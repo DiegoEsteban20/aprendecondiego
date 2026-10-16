@@ -1,5 +1,7 @@
 # API HTTP v0.2.0
 
+Esta API es opcional y sólo está disponible al ejecutar el servidor Node.js. La web estática de GitHub Pages no expone estas rutas: analiza en el navegador mediante el motor compartido, sin enviar configuraciones.
+
 Base local: `http://127.0.0.1:3000`. No requiere autenticación porque su operación prevista es loopback. No es un servicio público.
 
 ## GET /api/health

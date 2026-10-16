@@ -2,6 +2,10 @@
 
 ## Objetivo técnico
 
+### Versión web independiente
+
+La interfaz importa el analizador y los casos como módulos de navegador. No realiza solicitudes de análisis. `scripts/build-static.js` genera `docs/` con rutas relativas para el subdirectorio de Pages, una CSP en HTML y un service worker que cachea sólo recursos estáticos conocidos. El backend del diagrama siguiente queda como API opcional para scripts locales; no interviene en el análisis de la interfaz.
+
 Una aplicación local, reproducible y sin dependencias de ejecución que mantenga separadas la interpretación de configuración, las heurísticas, el transporte HTTP y la interfaz. La versión 0.2.0 es un laboratorio educativo, no una plataforma de auditoría certificada.
 
 ```mermaid

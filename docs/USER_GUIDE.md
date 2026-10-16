@@ -4,6 +4,8 @@ La guía interactiva está en **http://127.0.0.1:3000/guide** cuando el servidor
 
 ## 1. Propósito
 
+La web pública y el modo local no requieren ChatGPT, ChatGPT Plus, claves ni pagos. La interfaz procesa los textos en la memoria del navegador; la API HTTP se conserva como opción para scripts locales. Consulta [uso gratuito y sin conexión](FREE_AND_OFFLINE.md).
+
 Firewall Detective transforma configuraciones planas de un subconjunto de FortiOS en un modelo navegable. Está diseñado para aprendizaje, revisión documental y preparación de investigaciones. No prueba conectividad ni aplica cambios en dispositivos.
 
 ## 2. Instalación
@@ -83,7 +85,7 @@ La búsqueda de pertenencia requiere IPv4 y máscara decimal contigua. No interp
 
 ## 7. Privacidad
 
-El servidor escucha en loopback y procesa solicitudes en memoria. No almacena configuraciones, no usa base de datos ni telemetría y no envía información a fabricantes. Un reporte exportado sí permanece en tu disco y puede incluir direcciones internas, nombres y comentarios. Recargar la página elimina el estado de trabajo no guardado.
+La interfaz procesa configuraciones en memoria del navegador, sin enviarlas a un backend. La API Node.js opcional escucha en loopback para scripts locales. No se usa base de datos ni telemetría. Un reporte exportado sí permanece en tu disco. El service worker de la web estática conserva únicamente archivos públicos de la aplicación, nunca configuraciones o resultados. Recargar elimina el estado de trabajo no guardado.
 
 No expongas esta aplicación directamente a Internet: no incluye autenticación, TLS ni aislamiento multiusuario. Usa datos sintéticos en demos, capturas y tickets públicos.
 
