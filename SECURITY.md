@@ -2,6 +2,10 @@
 
 ## Alcance
 
+La versión estática de `docs/` se puede publicar con GitHub Pages: no contiene servidor de análisis ni endpoints de escritura. La interfaz procesa configuraciones en la memoria del navegador. El alojamiento sigue recibiendo las solicitudes normales de archivos públicos y puede registrar sus propios logs de acceso.
+
+El service worker sólo guarda e intercepta archivos estáticos GET incluidos en su lista fija. No persiste configuraciones ni resultados. Consulta [uso gratuito y sin conexión](docs/FREE_AND_OFFLINE.md).
+
 La versión 0.2.0 está destinada a un único usuario en su equipo local. No incluye autenticación, TLS, autorización por usuario, persistencia o aislamiento entre sesiones. No la expongas directamente a Internet ni a una red compartida.
 
 El proceso escucha en `127.0.0.1` por defecto. Docker escucha internamente en todas las interfaces: limita la publicación del puerto al loopback del host como indica el README.

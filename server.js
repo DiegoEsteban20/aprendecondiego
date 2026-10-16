@@ -10,6 +10,8 @@ assets['/academy'] = ['academy.html', 'text/html'];
 assets['/academy.js'] = ['academy.js', 'text/javascript'];
 assets['/academy-data.js'] = ['academy-data.js', 'text/javascript'];
 assets['/academy.css'] = ['academy.css', 'text/css'];
+assets['/analyzer.js'] = ['../lib/analyzer.js', 'text/javascript'];
+assets['/cases.js'] = ['../lib/cases.js', 'text/javascript'];
 const send = (response, status, data) => { response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' }); response.end(JSON.stringify(data)); };
 export const server = http.createServer(async (request, response) => {
   response.setHeader('X-Content-Type-Options', 'nosniff');

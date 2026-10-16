@@ -10,6 +10,14 @@ Laboratorio interactivo para investigar configuraciones de firewall, entender re
 
 **Estado:** v0.2.0 · laboratorio local · subconjunto FortiOS · escenarios sintéticos. PAN-OS y las conexiones a APIs de equipos todavía no están implementados.
 
+## Gratis y sin ChatGPT
+
+[Abrir la web](https://diegoesteban20.github.io/firewall-detective/) · [Uso gratuito y sin conexión](docs/FREE_AND_OFFLINE.md)
+
+La interfaz analiza en tu navegador, sin enviar configuraciones a una API. No requiere ChatGPT Plus, claves, cuentas ni suscripciones. Incluye caché offline de los archivos públicos del sitio después de una primera carga completa. Conserva también una copia descargada para no depender del alojamiento.
+
+Para actualizar la web: ejecuta `npm run build`, incluye los archivos generados de `docs/` en el commit y publica. GitHub Pages utiliza `main` → `/docs`. La API Node.js es una opción de uso local y no se despliega en Pages.
+
 ## Inicio rápido
 
 Requiere **Node.js 22 o posterior**. Sin dependencias de ejecución ni claves de API.
