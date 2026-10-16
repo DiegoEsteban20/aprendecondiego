@@ -1,0 +1,26 @@
+# Seguridad y tratamiento de datos
+
+## Alcance
+
+La versión 0.2.0 está destinada a un único usuario en su equipo local. No incluye autenticación, TLS, autorización por usuario, persistencia o aislamiento entre sesiones. No la expongas directamente a Internet ni a una red compartida.
+
+El proceso escucha en `127.0.0.1` por defecto. Docker escucha internamente en todas las interfaces: limita la publicación del puerto al loopback del host como indica el README.
+
+## Controles implementados
+
+- Archivos estáticos por lista permitida, sin rutas de disco suministradas por el usuario.
+- JSON obligatorio y validación de tipos en las rutas POST.
+- Límite de 1 MB por cuerpo, timeout de solicitud y sin CORS abierto.
+- Validación de Origin cuando se envía. No sustituye autenticación ni protege frente a todos los procesos locales.
+- Política CSP, `nosniff` y escape de texto al generar HTML.
+- Sin comandos remotos, sin acceso a firewalls, sin escritura de configuraciones y sin telemetría.
+
+No se ha realizado auditoría de seguridad independiente ni prueba de penetración. Estos controles no convierten el laboratorio en un servicio de producción.
+
+## Reportes de problemas
+
+Para fallos de seguridad, prepara una reproducción con datos sintéticos. Cuando el repositorio esté publicado, el mantenedor deberá habilitar un canal privado de reporte antes de invitar divulgaciones sensibles. No publiques secretos ni configuraciones de clientes en issues.
+
+## Datos
+
+La aplicación no guarda configuraciones en el servidor. El navegador conserva texto y resultados en memoria mientras la página permanece abierta. Los reportes descargados pueden incluir información interna. Revisa y anonimiza todos los archivos antes de compartir.

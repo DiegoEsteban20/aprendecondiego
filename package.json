@@ -1,0 +1,10 @@
+{
+  "name": "firewall-detective",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Local firewall configuration investigation lab",
+  "type": "module",
+  "scripts": { "start": "node server.js", "test": "node --test" },
+  "engines": { "node": ">=22" },
+  "license": "MIT"
+}
