@@ -30,6 +30,8 @@ El sitio estático también se puede servir desde cualquier servidor HTTP local 
 
 ## Coste y permanencia
 
+La página de presentación añade un video MP4 alojado en el mismo repositorio, sin terceros ni cuentas. El MP4 se excluye de la precarga offline para no retrasar la instalación ni interferir con las solicitudes por rango del reproductor. Descárgalo si quieres conservarlo sin conexión; la transcripción, las capturas y todas las herramientas interactivas sí forman parte de los recursos estáticos cacheados.
+
 GitHub Pages está disponible para repositorios públicos bajo GitHub Free según la documentación consultada. El dominio github.io evita comprar un dominio propio. No se ha contratado un plan ni configurado un recurso de pago.
 
 La continuidad del alojamiento depende de GitHub, sus términos y límites. No se promete disponibilidad perpetua de un servicio ajeno. La copia descargable y el procesamiento local mantienen la utilidad del proyecto aunque el alojamiento cambie.
