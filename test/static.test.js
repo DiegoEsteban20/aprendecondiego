@@ -16,7 +16,7 @@ test('portable IPv4 matching keeps strict dotted-decimal behavior', () => {
 test('static build works in a repository subpath without a backend', async () => {
   execFileSync(process.execPath, ['scripts/build-static.js'], { cwd: new URL('../', import.meta.url) });
   const root = new URL('../docs/', import.meta.url);
-  for (const filename of ['index.html', 'guide.html', 'academy.html', 'visuals.html']) {
+  for (const filename of ['index.html', 'guide.html', 'academy.html', 'visuals.html', 'learn.html']) {
     const html = await readFile(new URL(filename, root), 'utf8');
     assert.ok(!/\b(?:href|src)="\/(?!\/)/.test(html));
     assert.ok(html.includes('./offline.js'));
