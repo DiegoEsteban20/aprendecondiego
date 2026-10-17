@@ -1,3 +1,4 @@
+import './experience.js';
 import { academySource, lessons, ports, commands, glossary, questions } from './academy-data.js';
 
 const element = id => document.getElementById(id);
