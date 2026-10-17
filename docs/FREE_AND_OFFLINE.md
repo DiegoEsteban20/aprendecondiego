@@ -2,7 +2,7 @@
 
 ## Compromiso del proyecto
 
-El analizador, comparador, academia y ejercicios no requieren ChatGPT, ChatGPT Plus, claves de API, cuentas de fabricantes ni suscripciones. No se han integrado modelos de pago, publicidad ni servicios de análisis externos.
+El analizador, comparador, academia y ejercicios no requieren claves de API, cuentas de fabricantes ni suscripciones. No se han integrado modelos de pago, publicidad ni servicios de análisis externos.
 
 ## Web pública
 

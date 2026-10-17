@@ -4,7 +4,7 @@ La guía interactiva está en **http://127.0.0.1:3000/guide** cuando el servidor
 
 ## 1. Propósito
 
-La web pública y el modo local no requieren ChatGPT, ChatGPT Plus, claves ni pagos. La interfaz procesa los textos en la memoria del navegador; la API HTTP se conserva como opción para scripts locales. Consulta [uso gratuito y sin conexión](FREE_AND_OFFLINE.md).
+La web pública y el modo local no requieren claves ni pagos. La interfaz procesa los textos en la memoria del navegador; la API HTTP se conserva como opción para scripts locales. Consulta [uso gratuito y sin conexión](FREE_AND_OFFLINE.md).
 
 Firewall Detective transforma configuraciones planas de un subconjunto de FortiOS en un modelo navegable. Está diseñado para aprendizaje, revisión documental y preparación de investigaciones. No prueba conectividad ni aplica cambios en dispositivos.
 

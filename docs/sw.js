@@ -1,4 +1,4 @@
-const cacheName = 'firewall-detective-7d7525b095fcd567';
+const cacheName = 'firewall-detective-bc87f13b38f2b651';
 const resources = ["./","./academy-data.js","./academy.css","./academy.html","./academy.js","./app.js","./demo-academy.jpg","./demo-lab.jpg","./demo-poster.jpg","./demo-visuals.jpg","./demo-workshop.jpg","./demo.html","./demo.vtt","./experience.css","./experience.js","./guide.html","./guide.js","./help.js","./index.html","./layout-check.html","./layout-check.js","./learn-data.js","./learn.css","./learn.html","./learn.js","./manual.css","./review.css","./style.css","./visuals-data.js","./visuals.css","./visuals.html","./visuals.js","./analyzer.js","./cases.js","./offline.js"];
 const resourceURLs = new Set(resources.map(path => new URL(path, self.registration.scope).href));
 self.addEventListener('install', event => event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(resources))));
