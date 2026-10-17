@@ -1,3 +1,4 @@
+import './experience.js';
 import { guideSections, findingHelp } from './help.js';
 const content = document.getElementById('guide-content');
 const status = document.getElementById('guide-status');

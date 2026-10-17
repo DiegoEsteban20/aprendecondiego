@@ -1,5 +1,5 @@
-const cacheName = 'firewall-detective-17500611da8bf9a5';
-const resources = ["./","./academy-data.js","./academy.css","./academy.html","./academy.js","./app.js","./guide.html","./guide.js","./help.js","./index.html","./manual.css","./style.css","./visuals-data.js","./visuals.css","./visuals.html","./visuals.js","./analyzer.js","./cases.js","./offline.js"];
+const cacheName = 'firewall-detective-e5ad38a9c114a65a';
+const resources = ["./","./academy-data.js","./academy.css","./academy.html","./academy.js","./app.js","./experience.css","./experience.js","./guide.html","./guide.js","./help.js","./index.html","./learn-data.js","./learn.css","./learn.html","./learn.js","./manual.css","./style.css","./visuals-data.js","./visuals.css","./visuals.html","./visuals.js","./analyzer.js","./cases.js","./offline.js"];
 const resourceURLs = new Set(resources.map(path => new URL(path, self.registration.scope).href));
 self.addEventListener('install', event => event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(resources))));
 self.addEventListener('activate', event => event.waitUntil(Promise.all([

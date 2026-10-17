@@ -2,11 +2,11 @@
 
 ## Estado de este paquete
 
-Repositorio público: https://github.com/DiegoEsteban20/firewall-detective. La versión es **0.2.0**, con soporte parcial de FortiOS y sin soporte PAN-OS. La demo funciona localmente; no se ha desplegado un servicio público.
+Repositorio público: https://github.com/DiegoEsteban20/aprendecondiego. La versión base es **0.2.0**, ampliada con academia, taller y laboratorio visual, con soporte parcial de FortiOS y sin soporte PAN-OS. El sitio estático se publica en https://diegoesteban20.github.io/aprendecondiego/; no se despliega una API pública.
 
 ## Presentación sugerida
 
-- Nombre: `firewall-detective`.
+- Nombre: `aprendecondiego`.
 - Descripción: `Interactive firewall investigation lab: trace IP references, explain policy findings and compare synthetic FortiOS configurations.`
 - Topics: `firewall`, `fortinet`, `network-security`, `homelab`, `blue-team`, `javascript`, `learning`.
 - Licencia: MIT.

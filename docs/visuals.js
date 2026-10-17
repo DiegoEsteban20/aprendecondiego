@@ -1,3 +1,4 @@
+import './experience.js';
 import { tcpSteps, natSessions, flows, devices, osiLayers } from './visuals-data.js';
 
 const element = id => document.getElementById(id);
@@ -27,12 +28,14 @@ element('tcp-next').addEventListener('click', () => { stop(); tcpStep = Math.min
 element('tcp-prev').addEventListener('click', () => { stop(); tcpStep = Math.max(tcpStep - 1, 0); renderTCP(); });
 element('tcp-reset').addEventListener('click', () => { stop(); tcpStep = 0; renderTCP(); });
 element('tcp-play').addEventListener('click', () => {
+  if (document.documentElement.dataset.motion === 'off') { stop(); element('tcp-progress').textContent = 'Animación automática desactivada. Usa los botones de paso o habilítala en Lectura y accesibilidad.'; return; }
   if (timer) { stop(); return; }
   if (tcpStep === tcpSteps.length - 1) tcpStep = 0;
   element('tcp-play').textContent = 'Ⅱ Pausar'; element('tcp-play').setAttribute('aria-pressed', 'true'); renderTCP();
   timer = setInterval(() => { tcpStep++; renderTCP(); if (tcpStep === tcpSteps.length - 1) stop(); }, 3500);
 });
 document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
+window.addEventListener('reading-settings', event => { if (!event.detail.motion) stop(); });
 
 function renderNAT() {
   const selected = Number(element('nat-client').value);

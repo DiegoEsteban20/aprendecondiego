@@ -6,7 +6,7 @@ El analizador, comparador, academia y ejercicios no requieren ChatGPT, ChatGPT P
 
 ## Web pública
 
-Dirección prevista de GitHub Pages: https://diegoesteban20.github.io/firewall-detective/.
+Dirección de GitHub Pages: https://diegoesteban20.github.io/aprendecondiego/.
 
 El sitio se genera con `npm run build`, que escribe los archivos estáticos en `docs/` sin eliminar los manuales existentes. Se publica desde la rama `main`, carpeta `/docs`, en la configuración de GitHub Pages. No se necesita un servidor Node.js en Internet. El código del navegador procesa la configuración en memoria; no hace POST a `/api/analyze` o `/api/compare`.
 
@@ -17,6 +17,8 @@ La API HTTP sigue disponible para quien ejecute `node server.js` localmente y qu
 Abre la web con Internet y espera el mensaje de aplicación preparada para uso sin conexión, al final de la página. El service worker descarga una lista fija de archivos públicos del sitio: interfaz, motor, casos y academia. Después permite abrir laboratorio, manual y academia desde la caché sin conexión.
 
 No guarda configuraciones, respuestas del cuestionario, resultados ni reportes en la caché. Sólo intercepta GET de archivos estáticos de su lista. Una configuración propia permanece en memoria de la página; exporta lo que necesites conservar.
+
+El taller guarda las marcas de ocho módulos y las preferencias de lectura en localStorage del mismo origen. No guarda respuestas, evidencias abiertas, configuraciones o notas. Puedes exportar/importar el progreso como JSON y borrar las marcas desde el taller. Si bloqueas el almacenamiento, el sitio funciona en memoria y muestra un aviso. La caché incluye también el taller y los controles de lectura. Imprimir/guardar PDF es una acción local del navegador; revisa el contenido sensible antes de compartir el archivo.
 
 La disponibilidad offline depende de que el navegador complete y conserve la caché. Puede desaparecer al borrar datos, usar navegación privada o por decisiones de almacenamiento del navegador. Cierra las pestañas y vuelve a abrir con Internet para permitir que una actualización del service worker se active. Los enlaces a documentación externa requieren Internet.
 

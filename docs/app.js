@@ -1,3 +1,4 @@
+import './experience.js';
 import { findingHelp } from './help.js';
 import { analyze, compare } from './analyzer.js';
 import { cases } from './cases.js';
@@ -81,6 +82,15 @@ element('export').addEventListener('click', () => {
   const url = URL.createObjectURL(new Blob([JSON.stringify({ generatedAt: new Date().toISOString(), limitations: 'Análisis estático parcial; no demuestra alcanzabilidad ni evalúa NAT o enrutamiento.', ...latest }, null, 2)], { type: 'application/json' }));
   const anchor = document.createElement('a'); anchor.href = url; anchor.download = 'firewall-detective-report.json'; anchor.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
+
+element('print-report-button').addEventListener('click', () => {
+  if (!latest || analyzedText !== element('config').value) { showError(new Error('Analiza la configuración actual antes de preparar el informe.')); return; }
+  const report = element('print-report');
+  report.innerHTML = `<h1>Aprende con Diego · Informe de revisión</h1><p>${escape(new Date().toLocaleString('es-CL'))}</p><p>Análisis estático parcial de FortiOS. No certifica seguridad ni demuestra alcanzabilidad. No evalúa NAT, rutas, identidad o el motor real de políticas.</p><h2>Resumen</h2><p>${escape(latest.summary.objects)} objetos · ${escape(latest.summary.groups)} grupos · ${escape(latest.summary.rules)} políticas · ${escape(latest.summary.findings)} hallazgos</p><h2>Notas del analista</h2><p>${escape(element('report-notes').value || 'Sin notas añadidas.')}</p><h2>Hallazgos para revisar</h2>${latest.findings.map(finding => `<h3>${escape(finding.title)}</h3><p>${escape(finding.severity)} · Línea ${escape(finding.line)} · ${escape(finding.code)}\n${escape(finding.detail)}\nSiguiente paso: ${escape(findingHelp[finding.code]?.next || 'Contrasta con el diseño aprobado.')}</p>`).join('') || '<p>Sin hallazgos heurísticos. No implica ausencia de riesgos.</p>'}<h2>Políticas interpretadas</h2><table><thead><tr><th>ID</th><th>Origen → destino</th><th>Servicios / acción</th></tr></thead><tbody>${latest.rules.map(rule => `<tr><td>${escape(rule.name)}</td><td>${escape((rule.srcaddr || []).join(', '))} → ${escape((rule.dstaddr || []).join(', '))}</td><td>${escape((rule.service || []).join(', '))} / ${escape((rule.action || []).join(', '))}</td></tr>`).join('')}</tbody></table><h2>Advertencias de interpretación</h2>${latest.warnings.map(warning => `<p>Línea ${escape(warning.line)}: ${escape(warning.message)}</p>`).join('') || '<p>Sin advertencias emitidas para el subconjunto interpretado.</p>'}<p>Revisa el contenido antes de compartirlo: nombres, direcciones y notas pueden ser sensibles. El informe no se envía a ningún servicio; guardar PDF depende del diálogo de impresión del navegador.</p>`;
+  document.body.classList.add('printing-report');
+  window.print();
+});
+window.addEventListener('afterprint', () => { document.body.classList.remove('printing-report'); element('print-report').replaceChildren(); });
 element('compare-button').addEventListener('click', async () => {
   try {
     const result = await api('/api/compare', { before: element('before').value, after: element('config').value });
