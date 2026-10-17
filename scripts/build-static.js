@@ -4,9 +4,10 @@ import { createHash } from 'node:crypto';
 const root = new URL('../', import.meta.url);
 const destination = new URL('docs/', root);
 await mkdir(destination, { recursive: true });
-const filenames = (await readdir(new URL('public/', root))).filter(name => /\.(html|js|css)$/.test(name));
+const filenames = (await readdir(new URL('public/', root))).filter(name => /\.(html|js|css|jpg|mp4|vtt)$/.test(name));
 const outputs = new Map();
 for (const filename of filenames) {
+  if (/\.(jpg|mp4)$/.test(filename)) { outputs.set(filename, await readFile(new URL(`public/${filename}`, root))); continue; }
   let content = await readFile(new URL(`public/${filename}`, root), 'utf8');
   content = content.replace(/href="\/academy(?=["#])/g, 'href="./academy.html').replace(/href="\/guide(?=["#])/g, 'href="./guide.html').replace(/href="\/(?=["#])/g, 'href="./index.html').replace(/(href|src)="\/(?!\/)/g, '$1="./');
   if (filename.endsWith('.html')) {
@@ -31,7 +32,7 @@ outputs.set('offline.js', `if ('serviceWorker' in navigator) {
 const hash = createHash('sha256');
 for (const [filename, content] of outputs) hash.update(filename).update(content);
 const version = hash.digest('hex').slice(0, 16);
-const resources = ['./', ...[...outputs.keys()].map(name => `./${name}`)];
+const resources = ['./', ...[...outputs.keys()].filter(name => !name.endsWith('.mp4')).map(name => `./${name}`)];
 outputs.set('sw.js', `const cacheName = 'firewall-detective-${version}';
 const resources = ${JSON.stringify(resources)};
 const resourceURLs = new Set(resources.map(path => new URL(path, self.registration.scope).href));
