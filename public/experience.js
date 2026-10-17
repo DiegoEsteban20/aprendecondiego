@@ -5,6 +5,9 @@ document.head.append(stylesheet);
 const responsiveStylesheet = document.createElement('link');
 responsiveStylesheet.rel = 'stylesheet'; responsiveStylesheet.href = new URL('./review.css', import.meta.url).href;
 document.head.append(responsiveStylesheet);
+const beginnerStylesheet = document.createElement('link');
+beginnerStylesheet.rel = 'stylesheet'; beginnerStylesheet.href = new URL('./beginner.css', import.meta.url).href;
+document.head.append(beginnerStylesheet);
 const defaults = { theme: 'dark', size: 'normal', contrast: false, motion: !matchMedia('(prefers-reduced-motion: reduce)').matches };
 let preferences = { ...defaults };
 try {
@@ -32,14 +35,23 @@ if (main) {
   document.body.prepend(skip);
   const navigation = document.createElement('nav');
   navigation.className = 'site-navigation'; navigation.setAttribute('aria-label', 'Secciones principales');
-  const links = [['index.html', 'Analizador'], ['academy.html', 'Academia'], ['visuals.html', 'Laboratorio visual'], ['learn.html', 'Taller'], ['guide.html', 'Guía'], ['demo.html', 'Demo y alcance']];
+  const links = [['index.html', 'Inicio'], ['academy.html', '1. Aprender'], ['visuals.html', '2. Ver ejemplos'], ['learn.html', '3. Practicar'], ['lab.html', 'Analizador avanzado'], ['guide.html', 'Ayuda'], ['demo.html', 'Video y alcance']];
   for (const [filename, label] of links) {
     const link = document.createElement('a'); link.href = new URL(`./${filename}`, import.meta.url).href; link.textContent = label;
     if (location.pathname.endsWith(`/${filename}`) || (filename === 'index.html' && location.pathname.endsWith('/'))) link.setAttribute('aria-current', 'page');
-    navigation.append(link);
+    if (['lab.html', 'guide.html', 'demo.html'].includes(filename)) {
+      let more = navigation.querySelector('details');
+      if (!more) { more = document.createElement('details'); const summary = document.createElement('summary'); summary.textContent = 'Más opciones'; more.append(summary); navigation.append(more); }
+      more.append(link);
+    } else navigation.append(link);
   }
   toolbar.after(navigation);
 }
+for (const link of document.querySelectorAll('aside a, .hero a')) {
+  if (/Laboratorio|Analizador/.test(link.textContent) && ['/', '/#lab', './index.html', './index.html#lab'].includes(link.getAttribute('href'))) link.href = new URL('./lab.html', import.meta.url).href;
+}
+toolbar.querySelector('a').href = new URL('./index.html', import.meta.url).href;
+toolbar.querySelector('a').textContent = '◇ Aprende con Diego · Inicio';
 for (const field of ['theme', 'size', 'contrast', 'motion']) {
   const control = toolbar.querySelector(`#reading-${field}`);
   if (control.type === 'checkbox') control.checked = preferences[field]; else control.value = preferences[field];

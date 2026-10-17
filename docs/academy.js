@@ -21,6 +21,7 @@ function table(headers, rows) {
 }
 
 function render() {
+  document.body.classList.toggle('lesson-reading', view === 'lessons' && lessons.some(lesson => `#lesson-${lesson.id}` === location.hash));
   element('academy-tabs').querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.view === view)));
   const category = element('academy-category').value;
   let count = 0;
@@ -28,7 +29,8 @@ function render() {
   if (view === 'lessons') {
     const filtered = lessons.filter(lesson => includes(lesson) && (category === 'all' || lesson.category === category));
     count = filtered.length;
-    html = `<div class="lesson-grid">${filtered.map(lesson => `<a class="lesson-card" href="#lesson-${lesson.id}"><span class="eyebrow">${escape(lesson.category)} · ${escape(lesson.level)}</span><h2>${escape(lesson.title)}</h2><p>${escape(lesson.intro)}</p><small>PDF · pp. ${escape(lesson.pages)} <span>Leer lección ↗</span></small></a>`).join('')}</div>` + filtered.map(lesson => `<article class="panel guide-section lesson-detail" id="lesson-${lesson.id}"><div class="eyebrow">${escape(lesson.category)} / ${escape(lesson.level)} · PDF pp. ${escape(lesson.pages)}</div><h2>${escape(lesson.title)}</h2><p>${escape(lesson.intro)}</p>${lesson.concepts.map(([title, text]) => `<details open><summary>${escape(title)}</summary><p>${escape(text)}</p></details>`).join('')}<div class="learning-block"><h3>Ejemplo para entenderlo</h3><p>${escape(lesson.example)}</p></div><div class="learning-block"><h3>Práctica propuesta</h3><p>${escape(lesson.practice)}</p></div><div class="learning-block connection"><h3>Relación con Firewall Detective</h3><p>${escape(lesson.connection)}</p><a href="./index.html">Abrir el laboratorio ↗</a></div><a class="back-link" href="#academy-tabs">↑ Volver al índice</a></article>`).join('');
+    const selected = filtered.find(lesson => `#lesson-${lesson.id}` === location.hash);
+    html = (selected ? '<p><a href="#academy-tabs">← Elegir otra lección</a></p>' : `<div class="lesson-grid">${filtered.map(lesson => `<a class="lesson-card" href="#lesson-${lesson.id}"><span class="eyebrow">${escape(lesson.category)} · ${escape(lesson.level)}</span><h2>${escape(lesson.title)}</h2><p>${escape(lesson.intro)}</p><small>PDF · pp. ${escape(lesson.pages)} <span>Leer lección ↗</span></small></a>`).join('')}</div>`) + (selected ? [selected] : []).map(lesson => `<article class="panel guide-section lesson-detail" id="lesson-${lesson.id}"><div class="eyebrow">${escape(lesson.category)} / ${escape(lesson.level)} · PDF pp. ${escape(lesson.pages)}</div><h2>${escape(lesson.title)}</h2><p>${escape(lesson.intro)}</p>${lesson.concepts.map(([title, text]) => `<details open><summary>${escape(title)}</summary><p>${escape(text)}</p></details>`).join('')}<div class="learning-block"><h3>Ejemplo para entenderlo</h3><p>${escape(lesson.example)}</p></div><div class="learning-block"><h3>Práctica propuesta</h3><p>${escape(lesson.practice)}</p></div><div class="learning-block connection"><h3>Cuando quieras profundizar</h3><p>${escape(lesson.connection)}</p><a href="./lab.html">Abrir el laboratorio ↗</a></div><nav aria-label="Continuar aprendiendo"><a href="#lesson-${lessons[Math.max(0, lessons.indexOf(lesson) - 1)].id}">← Anterior</a> · <a href="#lesson-${lessons[Math.min(lessons.length - 1, lessons.indexOf(lesson) + 1)].id}">Siguiente lección →</a> · <a href="./learn.html">Marcar mi progreso</a></nav><a class="back-link" href="#academy-tabs">↑ Volver al índice</a></article>`).join('');
     if (!count) html = '<section class="panel"><h2>No se encontraron lecciones</h2><p class="footnote">Prueba otro término o elimina el filtro de categoría.</p></section>';
   }
   if (view === 'ports') {
@@ -50,6 +52,7 @@ function render() {
   element('academy-content').innerHTML = html;
   element('academy-status').textContent = `${count} ${view === 'lessons' ? 'lecciones' : view === 'ports' ? 'servicios' : view === 'commands' ? 'comandos de referencia' : view === 'glossary' ? 'términos' : 'preguntas'} · ${view === 'quiz' ? 'Autoevaluación local' : 'Contenido adaptado del PDF y notas editoriales'}`;
   if (view === 'quiz') bindQuiz();
+  if (document.body.classList.contains('lesson-reading')) element('academy-status').textContent = 'Una lección a la vez · Lee la idea, revisa el ejemplo y prueba explicarla antes de continuar.';
 }
 
 function feedback(question, answer) {
@@ -77,6 +80,6 @@ element('academy-tabs').querySelectorAll('button').forEach(button => button.addE
 element('academy-content').addEventListener('click', event => { const link = event.target.closest('[data-lesson]'); if (link) { event.preventDefault(); location.hash = `lesson-${link.dataset.lesson}`; openLesson(link.dataset.lesson); } });
 element('academy-search').addEventListener('input', render);
 element('academy-category').addEventListener('change', render);
-window.addEventListener('hashchange', () => { if (location.hash.startsWith('#lesson-')) openLesson(location.hash.slice(8)); });
+window.addEventListener('hashchange', () => { if (location.hash.startsWith('#lesson-')) openLesson(location.hash.slice(8)); else if (view === 'lessons') render(); });
 setFilters(); render();
 if (location.hash.startsWith('#lesson-')) openLesson(location.hash.slice(8));
