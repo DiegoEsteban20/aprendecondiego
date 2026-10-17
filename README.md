@@ -43,6 +43,8 @@ Cambiar un criterio no confirma que una política sea segura. El proyecto muestr
 
 ## Herramientas y propósito
 
+**Nuevo: [laboratorio visual](https://diegoesteban20.github.io/firewall-detective/visuals.html)** con animación controlada de TCP, tabla PAT interactiva, escenarios LAN/DMZ/WAN y recorrido OSI. Funciona sin servicios externos y está incluido en la caché offline. Las escenas son ejemplos educativos independientes del parser; no reemplazan ninguna función existente.
+
 | Herramienta | Para qué sirve |
 | --- | --- |
 | Tres investigaciones | Practicar exposición aparente, objetos duplicados y referencias ausentes |

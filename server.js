@@ -12,6 +12,7 @@ assets['/academy-data.js'] = ['academy-data.js', 'text/javascript'];
 assets['/academy.css'] = ['academy.css', 'text/css'];
 assets['/analyzer.js'] = ['../lib/analyzer.js', 'text/javascript'];
 assets['/cases.js'] = ['../lib/cases.js', 'text/javascript'];
+for (const filename of ['visuals.html', 'visuals.js', 'visuals-data.js', 'visuals.css']) assets[`/${filename}`] = [filename, filename.endsWith('.html') ? 'text/html' : filename.endsWith('.css') ? 'text/css' : 'text/javascript'];
 const send = (response, status, data) => { response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' }); response.end(JSON.stringify(data)); };
 export const server = http.createServer(async (request, response) => {
   response.setHeader('X-Content-Type-Options', 'nosniff');
