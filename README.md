@@ -28,7 +28,7 @@ El video es una presentación sin audio de capturas reales con rótulos, no una 
 
 </details>
 
-## Gratis y sin ChatGPT
+## Acceso libre y procesamiento local
 
 [Abrir la web](https://diegoesteban20.github.io/aprendecondiego/) · [Uso gratuito y sin conexión](docs/FREE_AND_OFFLINE.md)
 
@@ -40,7 +40,7 @@ Se conserva todo el laboratorio, la academia y las animaciones anteriores. Se a�
 
 Todas las páginas incorporan tema claro/oscuro, texto grande, contraste reforzado y control de animaciones automáticas. El analizador añade notas e informe imprimible mediante el diálogo del navegador, con opción de guardar PDF. Sólo el progreso marcado y las preferencias se guardan en localStorage: configuraciones, respuestas e informes permanecen en memoria hasta exportarlos o imprimirlos. El almacenamiento pertenece al origen y al navegador, no a la carpeta de la URL. Para pasar a otro origen o navegador, importa tu copia JSON.
 
-La interfaz analiza en tu navegador, sin enviar configuraciones a una API. No requiere ChatGPT Plus, claves, cuentas ni suscripciones. Incluye caché offline de los archivos públicos del sitio después de una primera carga completa. Conserva también una copia descargada para no depender del alojamiento.
+La interfaz analiza en tu navegador, sin enviar configuraciones a una API. No requiere claves, cuentas ni suscripciones. Incluye caché offline de los archivos públicos del sitio después de una primera carga completa. Conserva también una copia descargada para no depender del alojamiento.
 
 Para actualizar la web: ejecuta `npm run build`, incluye los archivos generados de `docs/` en el commit y publica. GitHub Pages utiliza `main` → `/docs`. La API Node.js es una opción de uso local y no se despliega en Pages.
 

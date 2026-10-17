@@ -23,6 +23,12 @@ No se ha realizado auditoría de seguridad independiente ni prueba de penetraci�
 
 ## Reportes de problemas
 
+El repositorio es público para permitir estudiar el código; eso no concede permiso para modificar la rama publicada. No añadas colaboradores, aplicaciones o claves de despliegue que no necesites. Usa una contraseña única y activa autenticación de dos factores en tu cuenta. Ninguna protección del repositorio sustituye la seguridad de la cuenta del propietario.
+
+Los cambios deben conservar el alcance educativo, pasar las pruebas y revisarse antes de publicarse. El archivo CODEOWNERS identifica al mantenedor; no es un control de acceso por sí solo. Las reglas efectivas de rama se consultan en Settings → Rulesets y no se activan sólo por añadir documentación.
+
+El workflow de pruebas solicita permisos de lectura del contenido y no conserva credenciales del checkout. No utiliza pull_request_target ni despliega aportes externos automáticamente. Los patrones de .gitignore reducen cargas accidentales de configuraciones, capturas y claves, pero no bloquean archivos ya rastreados ni reemplazan la revisión de secretos.
+
 Para fallos de seguridad, prepara una reproducción con datos sintéticos. Cuando el repositorio esté publicado, el mantenedor deberá habilitar un canal privado de reporte antes de invitar divulgaciones sensibles. No publiques secretos ni configuraciones de clientes en issues.
 
 ## Datos

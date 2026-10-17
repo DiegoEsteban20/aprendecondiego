@@ -19,7 +19,7 @@
 ## 0.2.0
 
 - Versión estática para GitHub Pages, análisis íntegro en navegador y caché offline de recursos públicos.
-- Sin cuentas, claves de API, ChatGPT Plus ni suscripciones; se mantiene el modo descargable y la API local opcional.
+- Sin cuentas, claves de API ni suscripciones; se mantiene el modo descargable y la API local opcional.
 
 - Academia basada en la guía aportada: 20 lecciones, referencias de protocolos/comandos, glosario y diez ejercicios de autoevaluación.
 - Trazabilidad por páginas del PDF, notas editoriales y enlaces desde hallazgos a conceptos.

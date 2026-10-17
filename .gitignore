@@ -6,3 +6,12 @@ node_modules/
 coverage/
 private-configs/
 *.zip
+*.pem
+*.key
+*.p12
+*.pfx
+*.conf
+*.cfg
+*.pcap
+*.pcapng
+firewall-detective-report.json
