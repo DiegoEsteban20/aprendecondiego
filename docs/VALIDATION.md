@@ -1,5 +1,7 @@
 # Validación de la versión 0.2.0
 
+La ampliación de presentación del 17 de octubre tiene **24 pruebas automatizadas** y una revisión de seis páginas en cuatro anchos CSS. Consulta [resultados, evidencias y límites de la revisión](REVIEW_NOTES.md). Las sesiones con personas y las pruebas en teléfonos físicos siguen pendientes; no deben confundirse con la inspección del agente.
+
 ## Pruebas automatizadas
 
 Ejecuta `node --test`. La suite en `test/analyzer.test.js` no necesita Internet ni firewalls; utiliza un servidor HTTP efímero.
