@@ -1,5 +1,14 @@
 # Historial
 
+## Ampliación de aprendizaje · 2026-10-17
+
+- Se conserva el contenido anterior y se incorpora el taller Aprende con Diego: ruta de ocho módulos, progreso exportable/importable y borrado explícito de marcas locales.
+- Tres trazas sintéticas comentadas, constructor de intención educativa, cuatro casos guiados y comparador conceptual de nueve áreas Fortinet/Palo Alto.
+- Repaso de 18 preguntas con explicaciones por alternativa; las diez preguntas originales continúan en la academia.
+- Preferencias de lectura en todas las páginas: claro/oscuro, texto grande, contraste y control de movimiento automático.
+- Informe de análisis imprimible con notas y opción PDF del navegador; sin persistir ni transmitir configuraciones o notas.
+- Repositorio y dirección pública renombrados a aprendecondiego. Sin servicios de pago ni nuevas dependencias.
+
 ## 0.2.0
 
 - Versión estática para GitHub Pages, análisis íntegro en navegador y caché offline de recursos públicos.

@@ -1,8 +1,8 @@
-# ◈ Firewall Detective
+# ◈ Aprende con Diego · Firewall Detective
 
 **Follow the rule. Find the story.**
 
-[Repositorio](https://github.com/DiegoEsteban20/firewall-detective) · [Pruebas automáticas](https://github.com/DiegoEsteban20/firewall-detective/actions)
+[Repositorio](https://github.com/DiegoEsteban20/aprendecondiego) · [Pruebas automáticas](https://github.com/DiegoEsteban20/aprendecondiego/actions)
 
 Laboratorio interactivo para investigar configuraciones de firewall, entender referencias de IPs y practicar revisiones de políticas **sin hardware ni credenciales**.
 
@@ -12,7 +12,15 @@ Laboratorio interactivo para investigar configuraciones de firewall, entender re
 
 ## Gratis y sin ChatGPT
 
-[Abrir la web](https://diegoesteban20.github.io/firewall-detective/) · [Uso gratuito y sin conexión](docs/FREE_AND_OFFLINE.md)
+[Abrir la web](https://diegoesteban20.github.io/aprendecondiego/) · [Uso gratuito y sin conexión](docs/FREE_AND_OFFLINE.md)
+
+## Taller Aprende con Diego
+
+[Entrar al taller](https://diegoesteban20.github.io/aprendecondiego/learn.html) · [Manual de las nuevas herramientas](docs/WORKSHOP.md)
+
+Se conserva todo el laboratorio, la academia y las animaciones anteriores. Se añaden ocho módulos de progreso exportable, tres trazas sintéticas comentadas, constructor educativo de intención de políticas, cuatro investigaciones guiadas, nueve comparaciones conceptuales Fortinet/Palo Alto y un repaso de 18 preguntas (las diez originales más ocho nuevas).
+
+Todas las páginas incorporan tema claro/oscuro, texto grande, contraste reforzado y control de animaciones automáticas. El analizador añade notas e informe imprimible mediante el diálogo del navegador, con opción de guardar PDF. Sólo el progreso marcado y las preferencias se guardan en localStorage: configuraciones, respuestas e informes permanecen en memoria hasta exportarlos o imprimirlos. El progreso anterior a un cambio de URL no se traslada automáticamente: importa tu copia JSON en la dirección nueva.
 
 La interfaz analiza en tu navegador, sin enviar configuraciones a una API. No requiere ChatGPT Plus, claves, cuentas ni suscripciones. Incluye caché offline de los archivos públicos del sitio después de una primera carga completa. Conserva también una copia descargada para no depender del alojamiento.
 
@@ -43,7 +51,7 @@ Cambiar un criterio no confirma que una política sea segura. El proyecto muestr
 
 ## Herramientas y propósito
 
-**Nuevo: [laboratorio visual](https://diegoesteban20.github.io/firewall-detective/visuals.html)** con animación controlada de TCP, tabla PAT interactiva, escenarios LAN/DMZ/WAN y recorrido OSI. Funciona sin servicios externos y está incluido en la caché offline. Las escenas son ejemplos educativos independientes del parser; no reemplazan ninguna función existente.
+**Nuevo: [laboratorio visual](https://diegoesteban20.github.io/aprendecondiego/visuals.html)** con animación controlada de TCP, tabla PAT interactiva, escenarios LAN/DMZ/WAN y recorrido OSI. Funciona sin servicios externos y está incluido en la caché offline. Las escenas son ejemplos educativos independientes del parser; no reemplazan ninguna función existente.
 
 | Herramienta | Para qué sirve |
 | --- | --- |
