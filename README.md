@@ -10,6 +10,24 @@ Laboratorio interactivo para investigar configuraciones de firewall, entender re
 
 **Estado:** v0.2.0 · laboratorio local · subconjunto FortiOS · escenarios sintéticos. PAN-OS y las conexiones a APIs de equipos todavía no están implementados.
 
+## Presentación en un minuto
+
+**Para quién:** estudiantes y profesionales de conectividad, redes y ciberseguridad que quieren aprender con evidencia sin disponer de un firewall físico.
+
+**Qué demuestra el proyecto:** análisis estático educativo, diseño de interfaz, visualización de protocolos, documentación de límites y pruebas reproducibles. **No es una herramienta validada para auditar producción**, no modifica equipos ni interpreta XML PAN-OS.
+
+[Ver demo con video y transcripción](https://diegoesteban20.github.io/aprendecondiego/demo.html) · [Descargar video de 24 segundos](https://diegoesteban20.github.io/aprendecondiego/demo.mp4) · [Plan de pruebas con personas](docs/USER_TESTING.md)
+
+El video es una presentación sin audio de capturas reales con rótulos, no una grabación continua ni una demostración en hardware. Se aloja en el propio proyecto, sin plataformas externas ni pagos.
+
+<details><summary>Capturas del taller y del laboratorio visual</summary>
+
+![Trazas comentadas en el taller](docs/demo-workshop.jpg)
+
+![Diagrama TCP con pasos manuales](docs/demo-visuals.jpg)
+
+</details>
+
 ## Gratis y sin ChatGPT
 
 [Abrir la web](https://diegoesteban20.github.io/aprendecondiego/) · [Uso gratuito y sin conexión](docs/FREE_AND_OFFLINE.md)
@@ -151,7 +169,11 @@ El contenedor escucha internamente en todas sus interfaces; el mapeo anterior li
 node --test
 ```
 
-Las pruebas cubren heurísticas, referencias transitivas, ciclos, IPv4, estructura, campos omitidos, comparación y contrato HTTP. GitHub Actions está configurado para Node.js 22 y 24; su ejecución remota se verificará después de publicar.
+Las pruebas cubren heurísticas, referencias transitivas, ciclos, IPv4, estructura, campos omitidos, comparación, contrato HTTP, progreso y referencias del sitio estático. GitHub Actions ejecuta la suite en Node.js 22 y 24. Consulta su resultado por commit en la pestaña Actions; no equivale a validación contra equipos reales.
+
+La navegación común permanece visible sin depender del menú lateral e incorpora un enlace de salto al contenido. Para revisar anchos CSS de 320, 390, 768 y 1280 px abre [la herramienta de desarrollo responsive](https://diegoesteban20.github.io/aprendecondiego/layout-check.html). No sustituye pruebas en un teléfono físico ni una auditoría completa de accesibilidad. El plan de sesiones externas está preparado, pero no se han inventado ni realizado pruebas con personas.
+
+El video ya está incluido: usar el sitio no requiere FFmpeg. Sólo para regenerarlo, instala FFmpeg desde su fuente oficial o un registro reconocido y ejecuta `node scripts/build-demo.js /ruta/a/ffmpeg /ruta/a/fuente.ttf`; después `npm run build`. El script usa las cuatro capturas `public/demo-*.jpg` y genera un MP4 H.264 de 24 segundos, 1280×720, sin audio.
 
 ```text
 firewall-detective/

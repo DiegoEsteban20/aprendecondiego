@@ -15,6 +15,7 @@ assets['/cases.js'] = ['../lib/cases.js', 'text/javascript'];
 for (const filename of ['visuals.html', 'visuals.js', 'visuals-data.js', 'visuals.css']) assets[`/${filename}`] = [filename, filename.endsWith('.html') ? 'text/html' : filename.endsWith('.css') ? 'text/css' : 'text/javascript'];
 for (const filename of ['learn.html', 'learn.js', 'learn-data.js', 'learn.css', 'experience.js', 'experience.css', 'academy.html', 'guide.html']) assets[`/${filename}`] = [filename, filename.endsWith('.html') ? 'text/html' : filename.endsWith('.css') ? 'text/css' : 'text/javascript'];
 const send = (response, status, data) => { response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' }); response.end(JSON.stringify(data)); };
+for (const filename of ['experience.js', 'review.css', 'demo.html', 'layout-check.html', 'layout-check.js', 'demo.vtt', 'demo.mp4', 'demo-poster.jpg', 'demo-lab.jpg', 'demo-academy.jpg', 'demo-visuals.jpg', 'demo-workshop.jpg']) assets[`/${filename}`] = [filename, filename.endsWith('.html') ? 'text/html' : filename.endsWith('.css') ? 'text/css' : filename.endsWith('.jpg') ? 'image/jpeg' : filename.endsWith('.mp4') ? 'video/mp4' : filename.endsWith('.vtt') ? 'text/vtt' : 'text/javascript'];
 export const server = http.createServer(async (request, response) => {
   response.setHeader('X-Content-Type-Options', 'nosniff');
   response.setHeader('Content-Security-Policy', "default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'");

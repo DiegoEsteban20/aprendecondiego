@@ -1,5 +1,12 @@
 # Historial
 
+## Pulido de presentación y navegación · 2026-10-17
+
+- Navegación común de seis secciones, enlace de salto y ajustes de reflujo para pantallas pequeñas; no se retira el contenido existente.
+- Página Demo y alcance con video de capturas reales, subtítulos y transcripción. Video autoalojado y sin reproducción automática, excluido de la caché offline inicial.
+- Capturas actualizadas en README, propósito y límites más visibles, guion de pruebas externas pendiente de ejecución.
+- Verificación automatizada de enlaces locales de todas las páginas y de integridad del video generado; herramienta de revisión de viewport CSS.
+
 ## Ampliación de aprendizaje · 2026-10-17
 
 - Se conserva el contenido anterior y se incorpora el taller Aprende con Diego: ruta de ocho módulos, progreso exportable/importable y borrado explícito de marcas locales.
