@@ -1,12 +1,12 @@
 # ◈ Aprende con Diego · Firewall Detective
 
-**Follow the rule. Find the story.**
+**Aprende redes, paso a paso.**
 
 [Repositorio](https://github.com/DiegoEsteban20/aprendecondiego) · [Pruebas automáticas](https://github.com/DiegoEsteban20/aprendecondiego/actions)
 
-Laboratorio interactivo para investigar configuraciones de firewall, entender referencias de IPs y practicar revisiones de políticas **sin hardware ni credenciales**.
+Plataforma educativa para aprender redes, observar ejemplos y practicar con firewalls **sin hardware ni credenciales**. Incluye una ruta guiada, biblioteca de conceptos y analizador de configuraciones.
 
-![Vista del laboratorio](docs/preview.png)
+![Inicio guiado con el diseño actual de Aprende con Diego](docs/home-preview.jpg)
 
 **Estado:** v0.2.0 · laboratorio local · subconjunto FortiOS · escenarios sintéticos. PAN-OS y las conexiones a APIs de equipos todavía no están implementados.
 
@@ -18,13 +18,19 @@ Laboratorio interactivo para investigar configuraciones de firewall, entender re
 
 [Ver demo con video y transcripción](https://diegoesteban20.github.io/aprendecondiego/demo.html) · [Descargar video de 24 segundos](https://diegoesteban20.github.io/aprendecondiego/demo.mp4) · [Plan de pruebas con personas](docs/USER_TESTING.md)
 
-El video es una presentación sin audio de capturas reales con rótulos, no una grabación continua ni una demostración en hardware. Se aloja en el propio proyecto, sin plataformas externas ni pagos.
+El video es una presentación sin audio de capturas reales con rótulos, no una grabación continua ni una demostración en hardware. Se aloja en el propio proyecto, sin plataformas externas ni pagos. El video conserva el recorrido de la interfaz anterior; las capturas siguientes muestran el diseño actual.
 
-<details><summary>Capturas del taller y del laboratorio visual</summary>
+<details><summary>Capturas actuales del analizador, taller, diagramas y ayuda</summary>
+
+![Analizador de configuraciones con la navegación actual](docs/preview.png)
 
 ![Trazas comentadas en el taller](docs/demo-workshop.jpg)
 
 ![Diagrama TCP con pasos manuales](docs/demo-visuals.jpg)
+
+![Manual de herramientas con el diseño actual](docs/guide-preview.png)
+
+![Lectura de una lección en celular](docs/academy-mobile.png)
 
 </details>
 
