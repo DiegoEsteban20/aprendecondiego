@@ -6,7 +6,11 @@
 
 Plataforma educativa para aprender redes, observar ejemplos y practicar con firewalls **sin hardware ni credenciales**. Incluye una ruta guiada, biblioteca de conceptos y analizador de configuraciones.
 
-![Inicio guiado con el diseño actual de Aprende con Diego](docs/home-preview.jpg)
+## Vista rápida · 5 segundos · Sin audio
+
+https://github.com/user-attachments/assets/0fc6534e-8807-42a6-9aae-6a23625fd179
+
+[Descargar el clip MP4](media/recorrido-5s.mp4)
 
 **Estado:** v0.2.0 · laboratorio local · subconjunto FortiOS · escenarios sintéticos. PAN-OS y las conexiones a APIs de equipos todavía no están implementados.
 
@@ -205,3 +209,4 @@ firewall-detective/
 ## Licencia
 
 [MIT](LICENSE). Proyecto independiente de aprendizaje y revisión documental.
+
