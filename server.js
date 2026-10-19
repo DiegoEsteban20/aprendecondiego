@@ -7,6 +7,8 @@ import { cases } from './lib/cases.js';
 const assets = { '/': ['index.html', 'text/html'], '/guide': ['guide.html', 'text/html'], '/guide.js': ['guide.js', 'text/javascript'], '/help.js': ['help.js', 'text/javascript'], '/app.js': ['app.js', 'text/javascript'], '/style.css': ['style.css', 'text/css'] };
 assets['/manual.css'] = ['manual.css', 'text/css'];
 assets['/beginner.css'] = ['beginner.css', 'text/css'];
+assets['/interface.css'] = ['interface.css', 'text/css'];
+assets['/interface-polish.css'] = ['interface-polish.css', 'text/css'];
 for (const filename of ['index.html', 'lab.html', 'home.js', 'home.css']) assets[`/${filename}`] = [filename, filename.endsWith('.html') ? 'text/html' : filename.endsWith('.css') ? 'text/css' : 'text/javascript'];
 assets['/academy'] = ['academy.html', 'text/html'];
 assets['/academy.js'] = ['academy.js', 'text/javascript'];

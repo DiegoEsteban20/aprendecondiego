@@ -60,3 +60,17 @@ test('demo is self-hosted, captioned, manual and copied without binary corruptio
   for (const filename of ['index.html', 'academy.html', 'visuals.html', 'learn.html', 'guide.html', 'demo.html']) assert.ok(navigation.includes(filename));
   assert.ok(navigation.includes('Saltar al contenido'));
 });
+
+test('shared visual interface and mobile controls are packaged for offline learning', async () => {
+  const root = new URL('../docs/', import.meta.url);
+  const worker = await readFile(new URL('sw.js', root), 'utf8');
+  for (const filename of ['interface.css', 'interface-polish.css', 'experience.js', 'home.js']) {
+    assert.ok(worker.includes('./' + filename));
+    assert.equal(await readFile(new URL(filename, root), 'utf8'), await readFile(new URL('../public/' + filename, import.meta.url), 'utf8'));
+  }
+  const navigation = await readFile(new URL('experience.js', root), 'utf8');
+  assert.ok(navigation.includes('aria-controls="learning-menu"'));
+  assert.ok(navigation.includes("menu.setAttribute('aria-expanded'"));
+  assert.ok(navigation.includes("sidebar.querySelector('#guide-nav')"));
+  assert.ok(navigation.includes("guideSections.append(summary, guideNavigation)"));
+});
